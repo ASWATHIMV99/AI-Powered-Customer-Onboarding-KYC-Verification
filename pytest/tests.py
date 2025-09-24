@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import project modules
-from agents import (
+from agents.agents import (
     metadata_extractor, 
     document_processing_crew, 
     categorize_files_by_type,
@@ -73,11 +73,12 @@ Date: ____________
         """Test that the .env file contains a valid API key configuration."""
         print("[TEST] Testing .env API key configuration...")
         
-        # Check that .env file exists
-        self.assertTrue(os.path.exists(".env"), ".env file should exist")
+        # Check that .env file exists in the config directory
+        env_path = os.path.join("config", ".env")
+        self.assertTrue(os.path.exists(env_path), f".env file should exist at {env_path}")
         
-        # Load environment variables
-        load_dotenv()
+        # Load environment variables from config directory
+        load_dotenv(env_path)
         
         # Check that GEMINI_API_KEY is set
         api_key = os.getenv("GEMINI_API_KEY")
@@ -90,7 +91,7 @@ Date: ____________
         print("[TEST] Testing metadata extraction...")
         
         # Test PDF metadata extraction
-        pdf_file = "sample_kyc_document.pdf"
+        pdf_file = os.path.join("documents", "sample_kyc_document.pdf")
         if os.path.exists(pdf_file):
             metadata = metadata_extractor.extract_metadata(pdf_file)
             self.assertIn("file_name", metadata, "PDF metadata should include file_name")
@@ -102,7 +103,7 @@ Date: ____________
             print("[SKIP] PDF file not found for testing")
         
         # Test text file metadata extraction
-        txt_file = "sample_kyc_document.txt"
+        txt_file = os.path.join("documents", "sample_kyc_document.txt")
         if os.path.exists(txt_file):
             metadata = metadata_extractor.extract_metadata(txt_file)
             self.assertIn("file_name", metadata, "Text file metadata should include file_name")
@@ -117,8 +118,8 @@ Date: ____________
         print("[TEST] Testing file categorization...")
         
         test_files = [
-            "sample_kyc_document.pdf",
-            "sample_kyc_document.txt",
+            os.path.join("documents", "sample_kyc_document.pdf"),
+            os.path.join("documents", "sample_kyc_document.txt"),
             "nonexistent.xyz"
         ]
         
@@ -129,11 +130,11 @@ Date: ____________
         self.assertIn("other", categorized, "Categorized files should include 'other'")
         
         # Check that our sample files are categorized correctly
-        if os.path.exists("sample_kyc_document.pdf"):
-            self.assertIn("sample_kyc_document.pdf", categorized["documents"], "PDF should be categorized as document")
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.pdf")):
+            self.assertIn(os.path.join("documents", "sample_kyc_document.pdf"), categorized["documents"], "PDF should be categorized as document")
         
-        if os.path.exists("sample_kyc_document.txt"):
-            self.assertIn("sample_kyc_document.txt", categorized["documents"], "TXT should be categorized as document")
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.txt")):
+            self.assertIn(os.path.join("documents", "sample_kyc_document.txt"), categorized["documents"], "TXT should be categorized as document")
         
         print("[PASS] File categorization")
 
@@ -154,10 +155,10 @@ Date: ____________
         
         # Get sample files
         sample_files = []
-        if os.path.exists("sample_kyc_document.pdf"):
-            sample_files.append("sample_kyc_document.pdf")
-        if os.path.exists("sample_kyc_document.txt"):
-            sample_files.append("sample_kyc_document.txt")
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.pdf")):
+            sample_files.append(os.path.join("documents", "sample_kyc_document.pdf"))
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.txt")):
+            sample_files.append(os.path.join("documents", "sample_kyc_document.txt"))
         if os.path.exists("test_kyc_document.txt"):
             sample_files.append("test_kyc_document.txt")
         
@@ -232,10 +233,10 @@ Date: ____________
         
         # Get sample files
         sample_files = []
-        if os.path.exists("sample_kyc_document.pdf"):
-            sample_files.append("sample_kyc_document.pdf")
-        if os.path.exists("sample_kyc_document.txt"):
-            sample_files.append("sample_kyc_document.txt")
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.pdf")):
+            sample_files.append(os.path.join("documents", "sample_kyc_document.pdf"))
+        if os.path.exists(os.path.join("documents", "sample_kyc_document.txt")):
+            sample_files.append(os.path.join("documents", "sample_kyc_document.txt"))
         if os.path.exists("test_kyc_document.txt"):
             sample_files.append("test_kyc_document.txt")
         
