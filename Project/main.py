@@ -10,8 +10,11 @@ import sys
 from datetime import datetime
 from typing import List, Dict
 
+# Add the agents directory to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'agents'))
+
 # Import the agents
-from agents import (
+from agents.agents import (
     document_processing_crew, 
     metadata_extractor, 
     categorize_files_by_type,
@@ -143,7 +146,7 @@ def save_results(result: Dict, output_path: str):
 def main():
     parser = argparse.ArgumentParser(description="Process documents and images using specialized AI agents")
     parser.add_argument("files", nargs="+", help="Paths to files to process")
-    parser.add_argument("-o", "--output", help="Output JSON file path", default="analysis_results.json")
+    parser.add_argument("-o", "--output", help="Output JSON file path", default=os.path.join("output", "analysis_results.json"))
     
     args = parser.parse_args()
     

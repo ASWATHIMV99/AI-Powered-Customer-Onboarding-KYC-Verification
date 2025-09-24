@@ -1,0 +1,59 @@
+{
+  "package_id": "DUAL_AGENT_PACKAGE_20250924_012704",
+  "created_at": "2025-09-24T01:27:04.779532",
+  "processing_method": "dual_agent_system",
+  "total_files": 1,
+  "file_categories": {
+    "images": 0,
+    "documents": 1,
+    "other": 0
+  },
+  "categorized_files": {
+    "images": [],
+    "documents": [
+      "documents\\sample_kyc_document.pdf"
+    ],
+    "other": []
+  },
+  "file_metadata": [
+    {
+      "file_name": "sample_kyc_document.pdf",
+      "file_path": "documents\\sample_kyc_document.pdf",
+      "file_size": 1754,
+      "file_extension": ".pdf",
+      "created_date": "2025-09-11T12:13:25.455892",
+      "modified_date": "2025-09-10T18:10:51.845444",
+      "file_type": "PDF Document",
+      "pdf_analysis": {
+        "total_pages": 2,
+        "has_text": true,
+        "has_images": false,
+        "text_content": "Customer Onboarding KYC Document\nPersonal Information:\nName: John Doe\nDate of Birth: January 1, 1990\nAddress: 123 Main Street, Anytown, USA\nPhone: +1-555-123-4567\nEmail: john.doe@example.com\nIdentification:\nID Number: P12345678\nIssued Date: March 15, 2020\nExpiration Date: March 14, 2030\nAccount Information:\nAccount Type: Personal Checking\nInitial Deposit: $5,000.00\nSource of Funds: Employment Income\nRisk Assessment:\nCustomer Risk Level: Low\nPEP Status: No\nSanctions Screening: Passed\nDeclaration:\nI hereby declare that the information provided is true and accurate to the best of my knowledge.\n\nSignature: _____________________\nDate: ____________\n\n",
+        "page_details": [
+          {
+            "page_number": 1,
+            "text_length": 598,
+            "has_text": true,
+            "image_count": 0
+          },
+          {
+            "page_number": 2,
+            "text_length": 52,
+            "has_text": true,
+            "image_count": 0
+          }
+        ],
+        "extraction_method": "PyMuPDF",
+        "total_images": 0,
+        "character_count": 652,
+        "word_count": 87
+      }
+    }
+  ],
+  "document_processing_results": "**Document Content Analysis Report**\n\n**Document 1: sample_kyc_document.pdf**\n\n**1. Document Type:**  Know Your Customer (KYC) form\n\n**2. Document Structure:** The document is structured in sections: Personal Information, Identification, Account Information, Risk Assessment, and Declaration.  It follows a clear, logical flow for collecting customer data.\n\n**3. Key Information and Data Points:**\n\n* **Personal Information:**\n    * Name: John Doe\n    * Date of Birth: January 1, 1990\n    * Address: 123 Main Street, Anytown, USA\n    * Phone: +1-555-123-4567\n    * Email: john.doe@example.com\n* **Identification:**\n    * ID Number: P12345678\n    * Issued Date: March 15, 2020\n    * Expiration Date: March 14, 2030\n* **Account Information:**\n    * Account Type: Personal Checking\n    * Initial Deposit: $5,000.00\n    * Source of Funds: Employment Income\n* **Risk Assessment:**\n    * Customer Risk Level: Low\n    * PEP Status: No (Politically Exposed Person)\n    * Sanctions Screening: Passed\n* **Declaration:** Includes a declaration of accuracy and a space for signature and date.\n\n\n**4. Main Topics and Themes:** The main theme is customer onboarding and verification as part of a KYC process.  The document aims to collect personal, identification, and account information to assess risk and comply with regulatory requirements.\n\n**5. Important Numbers and Statistics:** $5,000.00 (initial deposit).\n\n**6. Key Names, Dates, and Locations:** John Doe, January 1, 1990, 123 Main Street, Anytown, USA, March 15, 2020, March 14, 2030.\n\n**7. Document Purpose:** To collect necessary information for customer onboarding and KYC compliance.\n\n**8. Structured Data/Tables:** While not presented as formal tables, the data is organized in a structured format with clear labels and sections.\n\n**9. Actionable Insights:**\n\n* The customer, John Doe, appears to be low risk based on the provided information.\n* The provided ID is valid until March 14, 2030.\n* The source of funds is declared as employment income.\n* The information provided needs to be verified against external sources to ensure accuracy and compliance.  Further due diligence may be required depending on internal policies and regulatory requirements.\n* The document is missing the actual signature and date, which are crucial for completion.\n\n\n**10. Summary:** This KYC document provides comprehensive personal, identification, and account information for John Doe.  The risk assessment indicates a low-risk profile.  The information needs further verification to ensure compliance with KYC regulations.  The document requires the customer's signature and date to be considered complete.",
+  "vision_analysis_results": "No images processed",
+  "agents_used": [
+    "Document Processing Agent"
+  ],
+  "package_status": "COMPLETED"
+}

@@ -1,0 +1,59 @@
+{
+  "package_id": "DUAL_AGENT_PACKAGE_20250924_133033",
+  "created_at": "2025-09-24T13:30:33.930547",
+  "processing_method": "dual_agent_system",
+  "total_files": 1,
+  "file_categories": {
+    "images": 0,
+    "documents": 1,
+    "other": 0
+  },
+  "categorized_files": {
+    "images": [],
+    "documents": [
+      "documents\\sample_kyc_document.pdf"
+    ],
+    "other": []
+  },
+  "file_metadata": [
+    {
+      "file_name": "sample_kyc_document.pdf",
+      "file_path": "documents\\sample_kyc_document.pdf",
+      "file_size": 1754,
+      "file_extension": ".pdf",
+      "created_date": "2025-09-11T12:13:25.455892",
+      "modified_date": "2025-09-10T18:10:51.845444",
+      "file_type": "PDF Document",
+      "pdf_analysis": {
+        "total_pages": 2,
+        "has_text": true,
+        "has_images": false,
+        "text_content": "Customer Onboarding KYC Document\nPersonal Information:\nName: John Doe\nDate of Birth: January 1, 1990\nAddress: 123 Main Street, Anytown, USA\nPhone: +1-555-123-4567\nEmail: john.doe@example.com\nIdentification:\nID Number: P12345678\nIssued Date: March 15, 2020\nExpiration Date: March 14, 2030\nAccount Information:\nAccount Type: Personal Checking\nInitial Deposit: $5,000.00\nSource of Funds: Employment Income\nRisk Assessment:\nCustomer Risk Level: Low\nPEP Status: No\nSanctions Screening: Passed\nDeclaration:\nI hereby declare that the information provided is true and accurate to the best of my knowledge.\n\nSignature: _____________________\nDate: ____________\n\n",
+        "page_details": [
+          {
+            "page_number": 1,
+            "text_length": 598,
+            "has_text": true,
+            "image_count": 0
+          },
+          {
+            "page_number": 2,
+            "text_length": 52,
+            "has_text": true,
+            "image_count": 0
+          }
+        ],
+        "extraction_method": "PyMuPDF",
+        "total_images": 0,
+        "character_count": 652,
+        "word_count": 87
+      }
+    }
+  ],
+  "document_processing_results": "```json\n[\n  {\n    \"file_name\": \"sample_kyc_document.pdf\",\n    \"file_type\": \"PDF Document\",\n    \"document_summary\": \"This document is a Customer Onboarding KYC (Know Your Customer) form. It collects personal information, identification details, account information, risk assessment data, and a declaration from the customer.\",\n    \"key_information\": {\n      \"personal_information\": {\n        \"name\": \"John Doe\",\n        \"date_of_birth\": \"January 1, 1990\",\n        \"address\": \"123 Main Street, Anytown, USA\",\n        \"phone\": \"+1-555-123-4567\",\n        \"email\": \"john.doe@example.com\"\n      },\n      \"identification\": {\n        \"id_number\": \"P12345678\",\n        \"issued_date\": \"March 15, 2020\",\n        \"expiration_date\": \"March 14, 2030\"\n      },\n      \"account_information\": {\n        \"account_type\": \"Personal Checking\",\n        \"initial_deposit\": \"$5,000.00\",\n        \"source_of_funds\": \"Employment Income\"\n      },\n      \"risk_assessment\": {\n        \"customer_risk_level\": \"Low\",\n        \"pep_status\": \"No\",\n        \"sanctions_screening\": \"Passed\"\n      },\n      \"declaration\": \"I hereby declare that the information provided is true and accurate to the best of my knowledge.\"\n    },\n    \"actionable_insights\": [\n      \"Verify the provided ID number (P12345678) against government databases.\",\n      \"Confirm the validity of the ID by checking the issued and expiration dates (March 15, 2020 - March 14, 2030).\",\n      \"Validate the source of funds (Employment Income) through employment verification or income statements.\",\n      \"Since the customer risk level is low, minimal ongoing monitoring is required, but periodic reviews should be conducted.\",\n      \"Confirm that the PEP status is 'No' and that the sanctions screening has indeed passed by cross-referencing with relevant databases.\",\n      \"Ensure the signature and date are present upon document completion.\"\n    ],\n    \"extracted_text\": \"Customer Onboarding KYC Document\\nPersonal Information:\\nName: John Doe\\nDate of Birth: January 1, 1990\\nAddress: 123 Main Street, Anytown, USA\\nPhone: +1-555-123-4567\\nEmail: john.doe@example.com\\nIdentification:\\nID Number: P12345678\\nIssued Date: March 15, 2020\\nExpiration Date: March 14, 2030\\nAccount Information:\\nAccount Type: Personal Checking\\nInitial Deposit: $5,000.00\\nSource of Funds: Employment Income\\nRisk Assessment:\\nCustomer Risk Level: Low\\nPEP Status: No\\nSanctions Screening: Passed\\nDeclaration:\\nI hereby declare that the information provided is true and accurate to the best of my knowledge.\\n\\nSignature: _____________________\\nDate: ____________\\n\\n\"\n  }\n]\n```",
+  "vision_analysis_results": "No images processed",
+  "agents_used": [
+    "Document Processing Agent"
+  ],
+  "package_status": "COMPLETED"
+}

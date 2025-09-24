@@ -38,13 +38,13 @@ An AI-powered document processing system for customer onboarding and KYC (Know Y
 Process documents using the command-line interface:
 
 ```bash
-python main.py file1.pdf file2.txt
+python main.py documents/file1.pdf documents/file2.txt
 ```
 
 You can also specify an output file:
 
 ```bash
-python main.py -o my_analysis.json file1.pdf file2.txt
+python main.py -o output/my_analysis.json documents/file1.pdf documents/file2.txt
 ```
 
 ### Processing Multiple Files
@@ -52,7 +52,7 @@ python main.py -o my_analysis.json file1.pdf file2.txt
 The system can process multiple files at once:
 
 ```bash
-python main.py *.pdf *.txt
+python main.py documents/*.pdf documents/*.txt
 ```
 
 ### Output
@@ -75,11 +75,14 @@ python test.py
 
 ## File Structure
 
-- `agents.py`: Core AI agents and processing logic
+- `agents/`: Directory containing AI agents and processing logic
+- `config/`: Configuration files including API keys
+- `documents/`: Sample documents for testing
+- `output/`: Directory where analysis results are saved
 - `main.py`: Command-line interface
 - `requirements.txt`: Python dependencies
-- `.env`: Environment variables (API keys)
-- Sample files for testing:
+
+Sample files for testing (in the `documents/` directory):
   - `sample_kyc_document.pdf`: Sample PDF document for testing
   - `sample_kyc_document.txt`: Sample text document for testing
 
